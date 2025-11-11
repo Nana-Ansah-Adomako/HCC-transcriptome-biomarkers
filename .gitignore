@@ -1,0 +1,57 @@
+# ================================================
+# Git Ignore File for HCC Transcriptomics Project
+# ================================================
+
+# --- R specific files ---
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.Rproj
+
+# --- Temporary / cache files ---
+*.Rout
+*.Rout.save
+*.Rcheck/
+*.rds
+*.RDS
+*.rda
+*.RData
+*.tmp
+*.bak
+*.log
+
+# --- IDE and system files ---
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.idea/
+*.vscode/
+*.project
+*.workspace
+*.code-workspace
+
+# --- Large data files (keep raw files local only) ---
+data/raw/*
+data/processed/*
+!data/processed/README.md    # Allow documentation placeholders
+!data/raw/README.md          # Allow documentation placeholders
+
+# --- Intermediate result or output files ---
+data/results/*
+data/plots/*
+!data/results/README.md
+!data/plots/README.md
+
+# --- External library folders ---
+renv/library/
+packrat/
+__pycache__/
+
+# --- Reports and drafts ---
+*.pdf
+*.docx
+*.pptx
+*.html
+*.c*
