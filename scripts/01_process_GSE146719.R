@@ -1,5 +1,5 @@
-# 01_preprocess_GSE146719.R
-# Preprocessing and DESeq2 differential expression analysis for GSE146719
+# 01_process_GSE146719.R
+# Processing and DESeq2 differential expression analysis for GSE146719
 
 # Load libraries
 library(GEOquery)
@@ -15,7 +15,7 @@ library(ggplot2)
 #----------------- Dataset 1: GSE146719 ------------------#
 gse1 <- getGEO("GSE146719", GSEMatrix = TRUE)[[1]]
 
-count_data1 <- read.table("/home/nana-ansah-adomako/HCC/GSE146719_All.counts.RNA.csv")
+count_data1 <- read.table("data/raw/GSE146719_All.counts.RNA.csv")
 pheno_data1 <- pData(gse1)
 
 # Check if column names of count matrix match phenotype rownames
