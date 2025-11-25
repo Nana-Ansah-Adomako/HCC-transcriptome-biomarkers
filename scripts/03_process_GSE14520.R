@@ -32,3 +32,18 @@ gene_symbols <- mapIds(
 # Add gene symbols to expression matrix
 expr_matrix <- cbind(GeneSymbol = gene_symbols, expr_matrix)
 expr_matrix <- expr_matrix[!is.na(expr_matrix[, "GeneSymbol"]), ]
+
+ # Handle duplicated symbols by keeping row with highest variance
+expr_matrix <- as.data.frame(expr_matrix)
+expr_matrix <- expr_matrix %>%
+  group_by(GeneSymbol) %>%
+  mutate(Variance = apply(across(where(is.numeric)), 1, var, na.rm = TRUE)) %>%
+  slice_max(order_by = Variance, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  dplyr::select(-Variance) %>%
+  column_to_rownames("GeneSymbol")
+
+# Ensure all data are numeric
+rownames_expr <- rownames(expr_matrix)
+expr_matrix <- as.data.frame(sapply(expr_matrix, as.numeric))
+rownames(expr_matrix) <- rownames_expr
