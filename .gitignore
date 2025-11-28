@@ -16,7 +16,6 @@
 *.rds
 *.RDS
 *.rda
-*.RData
 *.tmp
 *.bak
 *.log
@@ -32,18 +31,6 @@ Thumbs.db
 *.workspace
 *.code-workspace
 
-# --- Large data files (keep raw files local only) ---
-data/raw/*
-data/processed/*
-!data/processed/README.md    # Allow documentation placeholders
-!data/raw/README.md          # Allow documentation placeholders
-
-# --- Intermediate result or output files ---
-data/results/*
-data/plots/*
-!data/results/README.md
-!data/plots/README.md
-
 # --- External library folders ---
 renv/library/
 packrat/
@@ -54,4 +41,3 @@ __pycache__/
 *.docx
 *.pptx
 *.html
-*.c*
