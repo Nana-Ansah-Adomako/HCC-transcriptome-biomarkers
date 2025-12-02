@@ -1,7 +1,7 @@
-#term ID	term description	observed gene count	background gene count	strength	signal	false discovery rate	matching proteins in your network (IDs)	matching proteins in your network (labels)
-GO:0005680	Anaphase-promoting complex	4	22	2.23	1.96	2.86E-05	"BUB1B, CDC20, UBE2C, UBE2S"	"UBE2S,BUB1B,UBE2C,CDC20"
+#term ID	term description	observed gene count	background gene count	strength	signal	false discovery rate	matching proteins in your network (labels)	
+GO:0005680	Anaphase-promoting complex	4	22	2.23	1.96	2.86E-05	"BUB1B, CDC20, UBE2C, UBE2S"	
 GO:0005819	Spindle	7	425	1.19	1.09	2.10E-04	"BUB1B, CCNB1, CDC20, ECT2, NEK2, TPX2, TTK
-"	"CCNB1,BUB1B,TPX2,NEK2,TTK,CDC20,ECT2"
+"	
 GO:0005829	Cytosol	17	5438	0.47	0.43	0.00029	"CCNB1,UBE2S,BUB1B,CCNB2,TPX2,PKM,CDKN3,ANXA2,UBE2C,RRM2,NEK2,CDC20,ECT2,G6PD,PTTG1,KPNA2,PHGDH"	
 GO:0005634	Nucleus	19	7672	0.37	0.36	5.70E-04	"CCNB1,MCM4,UBE2S,SAE1,BUB1B,CCNB2,TPX2,PKM,ANXA2,UBE2C,RRM2,NEK2,TTK,CDC20,ECT2,G6PD,PTTG1,PBK,KPNA2"	
 GO:0015630	Microtubule cytoskeleton	9	1355	0.79	0.63	1.70E-03	"CCNB1,BUB1B,CCNB2,TPX2,NEK2,TTK,CDC20,ECT2,G6PD"	
@@ -31,3 +31,4 @@ GO:0005813	Centrosome	5	609	0.89	0.46	3.77E-02	"CCNB1,CCNB2,NEK2,CDC20,G6PD"
 								
 								
 								
+
