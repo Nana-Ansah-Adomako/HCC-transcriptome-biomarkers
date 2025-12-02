@@ -13,7 +13,7 @@ library(EnhancedVolcano)
 library(tibble)
 
 #-------------------- Step 1: Load GEO Data --------------------#
-gse3 <- getGEO("GSE14520", GSEMatrix = TRUE)
+gse3 <- getGEO("GSE14520", GSEMatrix = TRUE) # This does not download dataset locally 
 expression_set <- gse3[[1]]
 
 # Extract expression matrix
