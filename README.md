@@ -1,5 +1,5 @@
 # HCC-transcriptome-biomarkers
-# HCC Transcriptomic Meta-Analysis
+## HCC Transcriptomic Meta-Analysis
 
 This repository contains reproducible R scripts for analyzing multiple transcriptomic datasets related to Hepatocellular Carcinoma (HCC).  
 It integrates RNA-seq (DESeq2) and microarray (limma) analyses to identify common differentially expressed genes (DEGs).
