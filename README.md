@@ -12,7 +12,7 @@ It integrates RNA-seq (DESeq2) and microarray (limma) analyses to identify commo
 
 
 ## Author
-> Nana Ansah Adomako,
+> Nana Ansah Adomako and 
 > Stephen Borbi
 
 This is for research work titled "Transcriptome-Guided Identification and Functional Characterization of Biomarkers Involved in Hepatocellular Carcinoma Malignancy"
