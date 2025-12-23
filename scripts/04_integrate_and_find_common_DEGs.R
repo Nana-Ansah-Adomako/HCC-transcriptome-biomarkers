@@ -1,5 +1,5 @@
 #To find common genes across all highly DEG files
-file1 <- read.csv("/home/nana-ansah-adomako/HCC/sig_genes1.csv")
+file1 <- read.csv("results/significantly_expressed_geneset/sig_genes1.csv")
 file1 <- file1$x
 file2 <- conversion$hgnc_symbol
 file3 <- rownames(significant_degs)
