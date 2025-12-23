@@ -7,4 +7,4 @@ file3 <- rownames(significant_degs)
 
 gene_list <- intersect(intersect(file1,file2), file3)
 
-write.csv(gene_list, "gene_list.csv")
+write.csv(gene_list, "results/significantly_expressed_geneset/gene_list.csv")
