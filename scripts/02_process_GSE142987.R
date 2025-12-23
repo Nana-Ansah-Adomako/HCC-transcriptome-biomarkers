@@ -67,11 +67,11 @@ plotMA(res2,
        colLine = "black")
 
 #-------------------- Save Results -----------------------#
-write.csv(sig_genes2, "results/DEG_lists/sig_genes2.csv")
-write.csv(sig_genes2_all, "results/DEG_lists/sig_genes2_all.csv")
+write.csv(sig_genes2, "results/significantly_expressed_geneset/sig_genes2.csv")
+write.csv(sig_genes2_all, "results/significantly_expressed_geneset/sig_genes2_all.csv")
 
 #-------------------- Annotate Gene Symbols -------------#
-sig_genes2_all_name <- read.csv("results/DEG_lists/sig_genes2_all.csv")
+sig_genes2_all_name <- read.csv("results/significantly_expressed_geneset/sig_genes2_all.csv")
 
 ensembl <- useMart("ensembl", dataset = "hsapiens_gene_ensembl")
 sig_genes2_all_name$Gene_Symbol <- gsub("\\.\\d+", "", sig_genes2_all_name$X)
@@ -85,4 +85,4 @@ conversion <- getBM(attributes = c("ensembl_gene_id", "hgnc_symbol"),
 colnames(sig_genes2_all_name)[colnames(sig_genes2_all_name) == "Gene_Symbol"] <- "ensembl_gene_id"
 sig_genes2_all_name_annotated <- left_join(sig_genes2_all_name, conversion, by = "ensembl_gene_id")
 
-write.csv(sig_genes2_all_name_annotated, "results/DEG_lists/sig_genes2_all_name_annotated.csv")
+write.csv(sig_genes2_all_name_annotated, "results/significantly_expressed_geneset/sig_genes2_all_name_annotated.csv")
