@@ -90,5 +90,5 @@ plotMA(res1,
        colLine = "grey40")
 
 # Save results
-write.csv(sig_genes1_all, "sig_genes1_all.csv")
-write.csv(sig_genes1, "sig_genes1.csv")
+write.csv(sig_genes1_all, "results/significantly_expressed_geneset/sig_genes1_all.csv")
+write.csv(sig_genes1, "results/significantly_expressed_geneset/sig_genes1.csv")
