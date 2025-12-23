@@ -10,7 +10,7 @@ gse_2 <- getGEOSuppFiles("GSE142987")
 list.files("GSE142987")
 
 # Load count matrix (adjust the path to your working directory)
-count_data2 <- read.table("/home/nana-ansah-adomako/HCC/GSE142987/GSE142987_sample_count_matrix.txt")
+count_data2 <- read.table("data/raw/GSE142987_sample_count_matrix.txt")
 
 #-------------------- Data Formatting -------------------#
 # Make the first column gene IDs and row names
