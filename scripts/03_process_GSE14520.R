@@ -107,4 +107,4 @@ EnhancedVolcano(
 )
 
 #-------------------- Step 8: Save Results ----------------------#
-write.csv(significant_degs, "results/DEG_lists/sig_genes3.csv")
+write.csv(significant_degs, "results/significantly_expressed_geneset/sig_genes3.csv")
