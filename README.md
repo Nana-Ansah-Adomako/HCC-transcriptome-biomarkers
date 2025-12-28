@@ -1,4 +1,4 @@
-# Transcriptome-Guided Identification and Functional Characterization of Biomarkers Involved in Hepatocellular Carcinoma Malignancy
+# HCC-transcriptome-biomarkers
 
 This repository contains reproducible R scripts for analyzing multiple transcriptomic datasets related to Hepatocellular Carcinoma (HCC).  
 It integrates RNA-seq (DESeq2) and microarray (limma) analyses to identify common differentially expressed genes (DEGs).
