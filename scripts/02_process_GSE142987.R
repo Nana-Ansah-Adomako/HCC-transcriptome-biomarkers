@@ -66,6 +66,50 @@ plotMA(res2,
        colSig = "darkred",
        colLine = "black")
 
+#===============volcano plot
+# Prepare data frame from DESeq2 results
+vol_data <- as.data.frame(res2)
+vol_data$gene <- rownames(vol_data)
+
+# Define significance thresholds
+pval_cutoff <- 0.05
+lfc_cutoff  <- 1  # log2 fold change threshold
+
+# Classify genes
+vol_data$group <- "Not Significant"
+vol_data$group[vol_data$log2FoldChange >  lfc_cutoff & vol_data$padj < pval_cutoff] <- "Upregulated"
+vol_data$group[vol_data$log2FoldChange < -lfc_cutoff & vol_data$padj < pval_cutoff] <- "Downregulated"
+vol_data$group <- factor(vol_data$group, levels = c("Upregulated", "Downregulated", "Not Significant"))
+
+# Remove NA rows
+vol_data <- vol_data[!is.na(vol_data$padj) & !is.na(vol_data$log2FoldChange), ]
+
+# Plot
+ggplot(vol_data, aes(x = log2FoldChange, y = -log10(padj), color = group)) +
+  geom_point(alpha = 0.6, size = 1.5) +
+  scale_color_manual(values = c(
+    "Upregulated"     = "darkred",
+    "Downregulated"   = "steelblue",
+    "Not Significant" = "gray60"
+  )) +
+  geom_vline(xintercept = c(-lfc_cutoff, lfc_cutoff),
+             linetype = "dashed", color = "grey40", linewidth = 0.5) +
+  geom_hline(yintercept = -log10(pval_cutoff),
+             linetype = "dashed", color = "grey40", linewidth = 0.5) +
+  labs(
+    title    = "Differentially Expressed Genes of GSE142987 Dataset",
+    x        = expression(log[2]~"Fold Change"),
+    y        = expression(-log[10]~"(Adjusted p-value)"),
+    color    = "Expression"
+  ) +
+  theme_classic() +
+  theme(
+    plot.title   = element_text(hjust = 0.5, face = "bold", size = 13),
+    legend.position = "top"
+  )
+
+
+
 #-------------------- Save Results -----------------------#
 write.csv(sig_genes2, "results/significantly_expressed_geneset/sig_genes2.csv")
 write.csv(sig_genes2_all, "results/significantly_expressed_geneset/sig_genes2_all.csv")
